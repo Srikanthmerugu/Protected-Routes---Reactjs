@@ -1,0 +1,46 @@
+.step-Category {
+    width: 100%;
+    margin-top: 4rem;
+}
+.Category-main {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem;
+  }
+  
+
+  .Category-main img {
+    width: 80%;
+    height: auto;
+    margin: 0 2rem;
+    filter: grayscale(50%); 
+    transition: filter 0.5s ease; 
+  }
+  
+  .Category-main img:hover {
+    transform: scale(1.1);
+    filter:grayscale(1)
+  }
+  
+
+  @media screen and (max-width: 768px) {
+
+    .Category-main {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0rem;
+       
+      }
+  .Category-main img {
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+  }
+  }
