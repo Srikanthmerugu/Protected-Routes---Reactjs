@@ -1,38 +1,107 @@
-.App {
-  text-align: center;
+/* Button Component start*/
+.animated-button {
+
+  position: relative;
+  background: transparent;
+  border: 1px solid #0179cf;
+  color: #0179cf;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: color 0.4s, border-color 0.4s;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.animated-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    #0179cf,
+    #9ed1ee
+  ); /* Gradient from top-right to bottom-left */
+  transition: transform 0.4s;
+  z-index: -1;
+  transform: translateX(-100%) translateY(-100%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.animated-button:hover::before {
+  transform: translateX(0) translateY(0);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.animated-button:hover {
+  color: #fff; /* Text color on hover */
+  border-color: #0179cf; /* Optional: Change border color on hover */
+}
+
+/* Button Component end*/
+
+/* =========================== 
+
+ Card Component start here
+
+ =============================*/
+
+/* From Uiverse.io by gharsh11032000 */
+.card {
+  overflow: hidden;
+  position: relative;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 320px;
+  border-radius: 24px;
+  line-height: 1.6;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.card-component-img {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+.card-component-img img {
+  transition: transform 0.9s ease-in-out;
 }
 
-.App-link {
-  color: #61dafb;
+.card-component-img img:hover {
+  width: 100%;
+  transform: scale(1.3);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 10px;
+  /* border-radius: 22px; */
+  color: #0a0b36;
+  overflow: hidden;
+  background: #e0e5fa;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.content svg {
+  width: 48px;
+  height: 48px;
+}
+
+.content .para {
+  z-index: 1;
+  opacity: 1;
+  font-size: 18px;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card:hover {
+  transform: translate(0px, -16px);
+}
+.card-button button{
+  width:25.7vw;
+  padding: 10px;
+  border-radius:0 0 6px 6px;
 }
